@@ -1,0 +1,754 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A9757E3-94CA-4F4E-A5C0-9E94188CF929}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Diabetes_Final</RootNamespace>
+    <AssemblyName>Diabetes_Final</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44318</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\style-responsive.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\table-responsive.css" />
+    <Content Include="css\to-do.css" />
+    <Content Include="css\zabuto_calendar.css" />
+    <Content Include="DataBD\ModelDiabetes.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDiabetes.edmx</DependentUpon>
+      <LastGenOutput>ModelDiabetes.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBD\ModelDiabetes.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelDiabetes.edmx</DependentUpon>
+      <LastGenOutput>ModelDiabetes.cs</LastGenOutput>
+    </Content>
+    <Content Include="FormsPages\CRUD\Agregar_Medicion.aspx" />
+    <Content Include="FormsPages\DashBoard\DashBoardUsuario.aspx" />
+    <Content Include="FormsPages\DashBoard\DashBoard_Usuario.aspx" />
+    <Content Include="FormsPages\DASHejemplo.aspx" />
+    <Content Include="FormsPages\CRUD\Agregar_Cita.aspx" />
+    <Content Include="FormsPages\CRUD\Agregar_Conferencia.aspx" />
+    <Content Include="FormsPages\CRUD\Agregar_NuevaConfe.aspx" />
+    <Content Include="FormsPages\CRUD\Agregar_Persona.aspx" />
+    <Content Include="FormsPages\Calendario.aspx" />
+    <Content Include="FormsPages\Conferencias.aspx" />
+    <Content Include="FormsPages\DashBoard\Dashboard_Prueba.aspx" />
+    <Content Include="FormsPages\DashBoard\Dashboard_Asistencia.aspx" />
+    <Content Include="FormsPages\DashBoard\Dashboard_Mediciones.aspx" />
+    <Content Include="FormsPages\DashBoard\Dashboard_Usuario1.aspx" />
+    <Content Include="FormsPages\CRUD\Agregar_Especialista.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Citas.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Conferencia.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Especialista.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Medicion.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_NuevaConfe.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Persona.aspx" />
+    <Content Include="FormsPages\Ediciones\Edicion_Usuarios.aspx" />
+    <Content Include="FormsPages\EJEMPLODASH.aspx" />
+    <Content Include="FormsPages\Galeria.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Citas.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Conferencias.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Especialista.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Mediciones.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_NombreConfe.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Persona.aspx" />
+    <Content Include="FormsPages\Gestiones\Gestion_Usuarios.aspx" />
+    <Content Include="FormsPages\Inicio.aspx" />
+    <Content Include="FormsPages\Login.aspx" />
+    <Content Include="FormsPages\prueba_examen.aspx" />
+    <Content Include="FormsPages\Recetas.aspx" />
+    <Content Include="FormsPages\Recomendaciones.aspx" />
+    <Content Include="FormsPages\Talleres.aspx" />
+    <Content Include="img\404.png" />
+    <Content Include="img\500.png" />
+    <Content Include="img\apple-touch-icon.png" />
+    <Content Include="img\blog-bg.jpg" />
+    <Content Include="img\checkbox-gray.png" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\friends\fr-01.jpg" />
+    <Content Include="img\friends\fr-02.jpg" />
+    <Content Include="img\friends\fr-03.jpg" />
+    <Content Include="img\friends\fr-04.jpg" />
+    <Content Include="img\friends\fr-05.jpg" />
+    <Content Include="img\friends\fr-06.jpg" />
+    <Content Include="img\friends\fr-07.jpg" />
+    <Content Include="img\friends\fr-08.jpg" />
+    <Content Include="img\friends\fr-09.jpg" />
+    <Content Include="img\friends\fr-10.jpg" />
+    <Content Include="img\friends\fr-11.jpg" />
+    <Content Include="img\instagram.jpg" />
+    <Content Include="img\login-bg.jpg" />
+    <Content Include="img\login-ped.jpg" />
+    <Content Include="img\lorde.jpg" />
+    <Content Include="img\mask.png" />
+    <Content Include="img\ny.jpg" />
+    <Content Include="img\portfolio\port01.jpg" />
+    <Content Include="img\portfolio\port02.jpg" />
+    <Content Include="img\portfolio\port03.jpg" />
+    <Content Include="img\portfolio\port04.jpg" />
+    <Content Include="img\portfolio\port05.jpg" />
+    <Content Include="img\portfolio\port06.jpg" />
+    <Content Include="img\product.jpg" />
+    <Content Include="img\profile-01.jpg" />
+    <Content Include="img\profile-02.jpg" />
+    <Content Include="img\radio-gray.png" />
+    <Content Include="img\ui-danro.jpg" />
+    <Content Include="img\ui-divya.jpg" />
+    <Content Include="img\ui-sam.jpg" />
+    <Content Include="img\ui-sherman.jpg" />
+    <Content Include="img\ui-zac.jpg" />
+    <Content Include="img\weather.jpg" />
+    <Content Include="img\zoom.png" />
+    <Content Include="lib\advanced-datatable\css\demo_page.css" />
+    <Content Include="lib\advanced-datatable\css\demo_table.css" />
+    <Content Include="lib\advanced-datatable\css\demo_table_jui.css" />
+    <Content Include="lib\advanced-datatable\css\DT_bootstrap.css" />
+    <Content Include="lib\advanced-datatable\css\jquery.dataTables.css" />
+    <Content Include="lib\advanced-datatable\css\jquery.dataTables_themeroller.css" />
+    <Content Include="lib\advanced-datatable\images\back_disabled.png" />
+    <Content Include="lib\advanced-datatable\images\back_enabled.png" />
+    <Content Include="lib\advanced-datatable\images\back_enabled_hover.png" />
+    <Content Include="lib\advanced-datatable\images\details_close.png" />
+    <Content Include="lib\advanced-datatable\images\details_open.png" />
+    <Content Include="lib\advanced-datatable\images\favicon.ico" />
+    <Content Include="lib\advanced-datatable\images\forward_disabled.png" />
+    <Content Include="lib\advanced-datatable\images\forward_enabled.png" />
+    <Content Include="lib\advanced-datatable\images\forward_enabled_hover.png" />
+    <Content Include="lib\advanced-datatable\images\sort_asc.png" />
+    <Content Include="lib\advanced-datatable\images\sort_asc_disabled.png" />
+    <Content Include="lib\advanced-datatable\images\sort_both.png" />
+    <Content Include="lib\advanced-datatable\images\sort_desc.png" />
+    <Content Include="lib\advanced-datatable\images\sort_desc_disabled.png" />
+    <Content Include="lib\advanced-datatable\js\DT_bootstrap.js" />
+    <Content Include="lib\advanced-datatable\js\jquery.dataTables.js" />
+    <Content Include="lib\advanced-datatable\js\jquery.dataTables.min.js" />
+    <Content Include="lib\advanced-datatable\js\jquery.js" />
+    <Content Include="lib\advanced-form-components.js" />
+    <Content Include="lib\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="lib\bootstrap-daterangepicker\date.js" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="lib\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="lib\bootstrap-datetimepicker\css\datetimepicker.css" />
+    <Content Include="lib\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="lib\bootstrap-fileupload\bootstrap-fileupload.css" />
+    <Content Include="lib\bootstrap-fileupload\bootstrap-fileupload.js" />
+    <Content Include="lib\bootstrap-inputmask\bootstrap-inputmask.min.js" />
+    <Content Include="lib\bootstrap-switch.js" />
+    <Content Include="lib\bootstrap-timepicker\compiled\timepicker.css" />
+    <Content Include="lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="lib\bootstrap-wysihtml5\bootstrap-wysihtml5.css" />
+    <Content Include="lib\bootstrap-wysihtml5\bootstrap-wysihtml5.js" />
+    <Content Include="lib\bootstrap-wysihtml5\wysihtml5-0.3.0.js" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\calendar-conf-events.js" />
+    <Content Include="lib\chart-master\Chart.js" />
+    <Content Include="lib\chartjs-conf.js" />
+    <Content Include="lib\ckeditor\ckeditor.js" />
+    <Content Include="lib\common-scripts.js" />
+    <Content Include="lib\dropzone\css\dropzone.css" />
+    <Content Include="lib\dropzone\dropzone.js" />
+    <Content Include="lib\dropzone\images\spritemap%402x.png" />
+    <Content Include="lib\dropzone\images\spritemap.png" />
+    <Content Include="lib\easy-pie-chart.js" />
+    <Content Include="lib\fancybox\jquery.fancybox.css" />
+    <Content Include="lib\fancybox\jquery.fancybox.js" />
+    <Content Include="lib\file-uploader\css\jquery.fileupload-noscript.css" />
+    <Content Include="lib\file-uploader\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="lib\file-uploader\css\jquery.fileupload-ui.css" />
+    <Content Include="lib\file-uploader\css\jquery.fileupload.css" />
+    <Content Include="lib\file-uploader\img\loading.gif" />
+    <Content Include="lib\file-uploader\img\progressbar.gif" />
+    <Content Include="lib\file-uploader\js\cors\jquery.xdr-transport.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-audio.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-image.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-process.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-ui.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-validate.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload-video.js" />
+    <Content Include="lib\file-uploader\js\jquery.fileupload.js" />
+    <Content Include="lib\file-uploader\js\jquery.iframe-transport.js" />
+    <Content Include="lib\file-uploader\js\main.js" />
+    <Content Include="lib\file-uploader\js\vendor\jquery.ui.widget.js" />
+    <Content Include="lib\flotchart-conf.js" />
+    <Content Include="lib\flot\jquery.flot.crosshair.js" />
+    <Content Include="lib\flot\jquery.flot.js" />
+    <Content Include="lib\flot\jquery.flot.pie.js" />
+    <Content Include="lib\flot\jquery.flot.resize.js" />
+    <Content Include="lib\flot\jquery.flot.stack.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\form-component.js" />
+    <Content Include="lib\form-validation-script.js" />
+    <Content Include="lib\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="lib\fullcalendar\fullcalendar.min.js" />
+    <Content Include="lib\google-maps\data\points.js" />
+    <Content Include="lib\google-maps\maplace.js" />
+    <Content Include="lib\gritter-conf.js" />
+    <Content Include="lib\gritter\css\jquery.gritter.css" />
+    <Content Include="lib\gritter\css\jquery.gritter0.css" />
+    <Content Include="lib\gritter\images\gritter-light.png" />
+    <Content Include="lib\gritter\images\gritter-long.png" />
+    <Content Include="lib\gritter\images\gritter.png" />
+    <Content Include="lib\gritter\images\ie-spacer.gif" />
+    <Content Include="lib\gritter\js\jquery.gritter.js" />
+    <Content Include="lib\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="lib\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="lib\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="lib\jquery.backstretch.min.js" />
+    <Content Include="lib\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="lib\jquery.nicescroll.js" />
+    <Content Include="lib\jquery.scrollTo.min.js" />
+    <Content Include="lib\jquery.sparkline.js" />
+    <Content Include="lib\jquery.tagsinput.js" />
+    <Content Include="lib\jquery.ui.touch-punch.min.js" />
+    <Content Include="lib\jquery\Chart.js" />
+    <Content Include="lib\jquery\jquery.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\morris-conf.js" />
+    <Content Include="lib\morris\morris.min.js" />
+    <Content Include="lib\php-mail-form\validate.js" />
+    <Content Include="lib\raphael\raphael.min.js" />
+    <Content Include="lib\sparkline-chart.js" />
+    <Content Include="lib\tasks.js" />
+    <Content Include="lib\validar\validarPersona.js" />
+    <Content Include="lib\xchart\d3.v3.min.js" />
+    <Content Include="lib\xchart\xcharts.css" />
+    <Content Include="lib\xchart\xcharts.min.js" />
+    <Content Include="lib\zabuto_calendar.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataBD\CALENDARIO_7PASOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\CITAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\CONFERENCIAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\CUESTIONARIO_CONOCIMIENTOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\DATOS_CITA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ELEMENTOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ELEMENTOS_PERMISOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ELEMENTO_PERMITIDO.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ESPECIALISTA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ESTATUS_USU.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\MEDICION_GLUCOSA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ModelDiabetes.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDiabetes.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ModelDiabetes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\ModelDiabetes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelDiabetes.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\MODULOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\NOM_CONFERENCIA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\NOTAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PERFIL_MODULOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PERMISOS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PERSONAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PESO_TALLA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PREGUNTA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PREGUNTAS_CUESTIONARIO.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PREGUNTAS_PRUEBA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PREGUNTA_C.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\PRUEBA_BECK.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\Recomendaciones.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\RESPUESTAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\RESPUESTA_C.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\TIPO_ACTIVIDAD.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\TIPO_CITAS.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\Tipo_De_Medicion.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\TIPO_ESPECIALISTA.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\TIPO_USUARIO.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBD\USUARIO.cs">
+      <DependentUpon>ModelDiabetes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Medicion.aspx.cs">
+      <DependentUpon>Agregar_Medicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Medicion.aspx.designer.cs">
+      <DependentUpon>Agregar_Medicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\DashBoardUsuario.aspx.cs">
+      <DependentUpon>DashBoardUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\DashBoardUsuario.aspx.designer.cs">
+      <DependentUpon>DashBoardUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\DashBoard_Usuario.aspx.cs">
+      <DependentUpon>DashBoard_Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\DashBoard_Usuario.aspx.designer.cs">
+      <DependentUpon>DashBoard_Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DASHejemplo.aspx.cs">
+      <DependentUpon>DASHejemplo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DASHejemplo.aspx.designer.cs">
+      <DependentUpon>DASHejemplo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Cita.aspx.cs">
+      <DependentUpon>Agregar_Cita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Cita.aspx.designer.cs">
+      <DependentUpon>Agregar_Cita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Conferencia.aspx.cs">
+      <DependentUpon>Agregar_Conferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Conferencia.aspx.designer.cs">
+      <DependentUpon>Agregar_Conferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_NuevaConfe.aspx.cs">
+      <DependentUpon>Agregar_NuevaConfe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_NuevaConfe.aspx.designer.cs">
+      <DependentUpon>Agregar_NuevaConfe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Persona.aspx.cs">
+      <DependentUpon>Agregar_Persona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Persona.aspx.designer.cs">
+      <DependentUpon>Agregar_Persona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Calendario.aspx.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Calendario.aspx.designer.cs">
+      <DependentUpon>Calendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Conferencias.aspx.cs">
+      <DependentUpon>Conferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Conferencias.aspx.designer.cs">
+      <DependentUpon>Conferencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Prueba.aspx.cs">
+      <DependentUpon>Dashboard_Prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Prueba.aspx.designer.cs">
+      <DependentUpon>Dashboard_Prueba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Asistencia.aspx.cs">
+      <DependentUpon>Dashboard_Asistencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Asistencia.aspx.designer.cs">
+      <DependentUpon>Dashboard_Asistencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Mediciones.aspx.cs">
+      <DependentUpon>Dashboard_Mediciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Mediciones.aspx.designer.cs">
+      <DependentUpon>Dashboard_Mediciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Usuario1.aspx.cs">
+      <DependentUpon>Dashboard_Usuario1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\DashBoard\Dashboard_Usuario1.aspx.designer.cs">
+      <DependentUpon>Dashboard_Usuario1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Especialista.aspx.cs">
+      <DependentUpon>Agregar_Especialista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\CRUD\Agregar_Especialista.aspx.designer.cs">
+      <DependentUpon>Agregar_Especialista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Citas.aspx.cs">
+      <DependentUpon>Edicion_Citas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Citas.aspx.designer.cs">
+      <DependentUpon>Edicion_Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Conferencia.aspx.cs">
+      <DependentUpon>Edicion_Conferencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Conferencia.aspx.designer.cs">
+      <DependentUpon>Edicion_Conferencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Especialista.aspx.cs">
+      <DependentUpon>Edicion_Especialista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Especialista.aspx.designer.cs">
+      <DependentUpon>Edicion_Especialista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Medicion.aspx.cs">
+      <DependentUpon>Edicion_Medicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Medicion.aspx.designer.cs">
+      <DependentUpon>Edicion_Medicion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_NuevaConfe.aspx.cs">
+      <DependentUpon>Edicion_NuevaConfe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_NuevaConfe.aspx.designer.cs">
+      <DependentUpon>Edicion_NuevaConfe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Persona.aspx.cs">
+      <DependentUpon>Edicion_Persona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Persona.aspx.designer.cs">
+      <DependentUpon>Edicion_Persona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Usuarios.aspx.cs">
+      <DependentUpon>Edicion_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Ediciones\Edicion_Usuarios.aspx.designer.cs">
+      <DependentUpon>Edicion_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\EJEMPLODASH.aspx.cs">
+      <DependentUpon>EJEMPLODASH.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\EJEMPLODASH.aspx.designer.cs">
+      <DependentUpon>EJEMPLODASH.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Galeria.aspx.cs">
+      <DependentUpon>Galeria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Galeria.aspx.designer.cs">
+      <DependentUpon>Galeria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Citas.aspx.cs">
+      <DependentUpon>Gestion_Citas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Citas.aspx.designer.cs">
+      <DependentUpon>Gestion_Citas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Conferencias.aspx.cs">
+      <DependentUpon>Gestion_Conferencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Conferencias.aspx.designer.cs">
+      <DependentUpon>Gestion_Conferencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Especialista.aspx.cs">
+      <DependentUpon>Gestion_Especialista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Especialista.aspx.designer.cs">
+      <DependentUpon>Gestion_Especialista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Mediciones.aspx.cs">
+      <DependentUpon>Gestion_Mediciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Mediciones.aspx.designer.cs">
+      <DependentUpon>Gestion_Mediciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_NombreConfe.aspx.cs">
+      <DependentUpon>Gestion_NombreConfe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_NombreConfe.aspx.designer.cs">
+      <DependentUpon>Gestion_NombreConfe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Persona.aspx.cs">
+      <DependentUpon>Gestion_Persona.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Persona.aspx.designer.cs">
+      <DependentUpon>Gestion_Persona.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Usuarios.aspx.cs">
+      <DependentUpon>Gestion_Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Gestiones\Gestion_Usuarios.aspx.designer.cs">
+      <DependentUpon>Gestion_Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\prueba_examen.aspx.cs">
+      <DependentUpon>prueba_examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\prueba_examen.aspx.designer.cs">
+      <DependentUpon>prueba_examen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Recetas.aspx.cs">
+      <DependentUpon>Recetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Recetas.aspx.designer.cs">
+      <DependentUpon>Recetas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Recomendaciones.aspx.cs">
+      <DependentUpon>Recomendaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Recomendaciones.aspx.designer.cs">
+      <DependentUpon>Recomendaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormsPages\Talleres.aspx.cs">
+      <DependentUpon>Talleres.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormsPages\Talleres.aspx.designer.cs">
+      <DependentUpon>Talleres.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Blanco.Master.cs">
+      <DependentUpon>Blanco.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Blanco.Master.designer.cs">
+      <DependentUpon>Blanco.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\Home.Master.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\Home.Master.designer.cs">
+      <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\advanced-datatable\images\Sorting icons.psd" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="MasterPage\Blanco.Master" />
+    <Content Include="MasterPage\Home.Master" />
+    <EntityDeploy Include="DataBD\ModelDiabetes.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelDiabetes.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataBD\ModelDiabetes.edmx.diagram">
+      <DependentUpon>ModelDiabetes.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51071</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

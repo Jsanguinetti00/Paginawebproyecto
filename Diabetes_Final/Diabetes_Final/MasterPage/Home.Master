@@ -1,0 +1,201 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="Diabetes_Final.MasterPage.Home" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  
+  <!-- Favicons -->
+  <link href="../../img/favicon.png" rel="icon">
+  <link href="../../img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--external css-->
+  <link href="../../lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="../../css/style.css" rel="stylesheet">
+  <link href="../../css/style-responsive.css" rel="stylesheet">
+  <!--WEB ICONOS FRONT AWESOME-->
+  <script src="https://kit.fontawesome.com/9871e01082.js"></script>
+
+    <asp:ContentPlaceHolder ID="cph_heder_blanc" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  <section id="container">
+    <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+    <!--header start-->
+    <header class="header black-bg">
+      <div class="sidebar-toggle-box">
+        <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+      </div>
+      <!--logo start-->
+      <a href="../FormsPages/Inicio.aspx" class="logo"><b>P.E.D<span> 7 PASOS</span></b></a>
+      <!--logo end-->
+      <div class="top-menu">
+        <ul class="nav pull-right top-menu">
+          <li><a class="logout" href="../FormsPages/Inicio.aspx"> Home</a></li>
+        </ul>
+      </div>
+    </header>
+    <!--header end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+    <!--sidebar start-->
+    <aside>
+      <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+          <p class="centered"><a href="profile.html"><img src="../img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <h5 class="centered">Sam Soffes</h5>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="nav-icon fa fa-desktop"></i>
+              <span>Gestion</span>
+              </a>
+            <ul class="sub">
+              <li><a href="../../FormsPages/Gestiones/Gestion_Persona.aspx"> Personas</a></li>
+              <li><a href="../../FormsPages/Gestiones/Gestion_Usuarios.aspx"> Usuarios</a></li>
+              <li><a href="../../FormsPages/Gestiones/Gestion_Citas.aspx"> Citas</a></li>
+              <li><a href="../../FormsPages/Gestiones/Gestion_Especialista.aspx"> Especialistas</a></li>
+              <li><a href="../../FormsPages/Gestiones/Gestion_Conferencias.aspx"> Conferencias</a></li>
+              <li><a href="../../FormsPages/Gestiones/Gestion_NombreConfe.aspx"> Nueva Conferencia</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <span>Dashboard</span>
+              </a>
+            <ul class="sub">
+              <li><a href="../../FormsPages/DashBoard/Dashboard_Mediciones.aspx">Mediciones</a></li>
+              <li><a href="../../FormsPages/DashBoard/Dashboard_Prueba.aspx">Pruebas</a></li>
+              <li><a href="../../FormsPages/DashBoard/Dashboard_Asistencia.aspx">Asistencia</a></li>
+              <li><a href="../../FormsPages/DashBoard/Dashboard_Usuario.aspx">Usuarios</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="nav-icon fas fa-notes-medical"></i>
+              <span>Mediciones</span>
+              </a>
+            <ul class="sub">
+              <li><a href="">Glucosa</a></li>
+              <li><a href="">HBA1C</a></li>
+              <li><a href="">Mensuales</a></li>
+            </ul>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="nav-icon fas fa-clinic-medical"></i>
+              <span>Consultas</span>
+              </a>
+            <ul class="sub">
+              <li><a href="">Medico General</a></li>
+              <li><a href="">Nutriologo</a></li>
+              <li><a href="">Psicologia</a></li>
+              <li><a href="">Enfermeria</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../../FormsPages/Recomendaciones.aspx">
+              <i class="nav-icon fas fa-star"></i>
+              <span>Recomendaciones</span>
+              </a>
+          </li>
+          <li>
+            <a href="../../FormsPages/Conferencias.aspx">
+              <i class="nav-icon fas fa-bullhorn"></i>
+              <span>Conferencias</span>
+              </a>
+          </li>
+          <li>
+            <a href="../../FormsPages/Talleres.aspx">
+              <i class="nav-icon fas fa-hotel"></i>
+              <span>Talleres</span>
+              </a>
+          </li>
+          <li class="nav-header">Extras</li>
+          <li>
+            <a href="../../FormsPages/Calendario.aspx">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <span>Calendario</span>
+              </a>
+          </li>
+          <li>
+            <a href="../../FormsPages/Galeria.aspx">
+              <i class="nav-icon far fa-image"></i>
+              <span>Galeria</span>
+              </a>
+          </li>
+          <li class="nav-header">Descargas</li>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fas fa-cloud-download-alt"></i>
+              <span>Documentacion</span>
+              </a>
+            <ul class="sub">
+              <li><a href="../../FormspPages/Recetas.aspx">Recetas</a></li>
+            </ul>
+        </ul>
+        <!-- sidebar menu end-->
+      </div>
+    </aside>
+    <!--sidebar end-->
+    <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+    <!--main content start-->
+    <section id="main-content">
+      <section class="wrapper site-min-height">
+         <asp:ContentPlaceHolder ID="cph_contenido_blanco" runat="server">
+         </asp:ContentPlaceHolder>
+      </section>
+      <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+    <!--footer start-->
+    <footer class="site-footer">
+      <div class="text-center">
+        <p>
+          
+        </p>
+        <div class="credits">
+          <!--
+            You are NOT allowed to delete the credit link to TemplateMag with free version.
+            You can delete the credit link only if you bought the pro version.
+            Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/dashio-bootstrap-admin-template/
+            Licensing information: https://templatemag.com/license/
+          -->
+          
+        </div>
+        <a href="blank.html#" class="go-top">
+          <i class="fa fa-angle-up"></i>
+          </a>
+      </div>
+    </footer>
+    <!--footer end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+  <script src="../../lib/jquery/jquery.min.js"></script>
+  <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../../lib/jquery-ui-1.9.2.custom.min.js"></script>
+  <script src="../../lib/jquery.ui.touch-punch.min.js"></script>
+  <script class="include" type="text/javascript" src="../../lib/jquery.dcjqaccordion.2.7.js"></script>
+  <script src="../../lib/jquery.scrollTo.min.js"></script>
+  <script src="../../lib/jquery.nicescroll.js" type="text/javascript"></script>
+  <!--common script for all pages-->
+  <script src="../../lib/common-scripts.js"></script>
+  <!--script for this page-->
+</body>
+</html>

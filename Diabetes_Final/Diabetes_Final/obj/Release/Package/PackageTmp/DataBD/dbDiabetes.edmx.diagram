@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dfefd0b0054e4ed7828967ef66537252" Name="Diagram1">
+        <EntityTypeShape EntityType="dbDiabetesModel.CALENDARIO_7PASOS" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.CITAS" Width="1.5" PointX="6" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.CONFERENCIAS" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.CUESTIONARIO_CONOCIMIENTOS" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.DATOS_CITA" Width="1.5" PointX="3.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.ELEMENTO_PERMITIDO" Width="1.5" PointX="12.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.ELEMENTOS" Width="1.5" PointX="8" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.ELEMENTOS_PERMISOS" Width="1.5" PointX="10.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.ESPECIALISTA" Width="1.5" PointX="1.5" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.ESTATUS_USU" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.MEDICION_GLUCOSA" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.MODULOS" Width="1.5" PointX="5.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.NOM_CONFERENCIA" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PERFIL_MODULOS" Width="1.5" PointX="8" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PERMISOS" Width="1.5" PointX="8" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PERSONAS" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PESO_TALLA" Width="1.5" PointX="3" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PREGUNTA" Width="1.5" PointX="3" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PREGUNTA_C" Width="1.5" PointX="3" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PREGUNTAS_CUESTIONARIO" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PREGUNTAS_PRUEBA" Width="1.5" PointX="5.25" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.PRUEBA_BECK" Width="1.5" PointX="3" PointY="31.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.RESPUESTA_C" Width="1.5" PointX="3" PointY="37" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.RESPUESTAS" Width="1.5" PointX="3" PointY="41.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.TIPO_ACTIVIDAD" Width="1.5" PointX="0.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.TIPO_CITAS" Width="1.5" PointX="3.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.Tipo_De_Medicion" Width="1.5" PointX="0.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.TIPO_ESPECIALISTA" Width="1.5" PointX="1.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.TIPO_USUARIO" Width="1.5" PointX="3.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbDiabetesModel.USUARIO" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS100" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_ACTIVIDAD99" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefDATOS_CITA95" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS97" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_CITAS96" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefNOM_CONFERENCIA122" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS98" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefCUESTIONARIO_CONOCIMIENTOS135" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS136" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefESPECIALISTA132" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefELEMENTOS_PERMISOS111" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_USUARIO108" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefELEMENTOS109" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefMODULOS114" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERMISOS110" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_ESPECIALISTA131" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefESTATUS_USU121" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS120" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTipo_De_Medicion118" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefMODULOS115" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_USUARIO113" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS104" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS107" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPERSONAS129" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPREGUNTA127" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPREGUNTA_C134" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefRESPUESTA_C133" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefPRUEBA_BECK126" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefRESPUESTAS128" ManuallyRouted="false" />
+        <AssociationConnector Association="dbDiabetesModel.RefTIPO_USUARIO112" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

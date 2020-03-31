@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbDiabetesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CALENDARIO_7PASOS">
+    <Key>
+      <PropertyRef Name="ID_CALENDARIO_7PASOS" />
+    </Key>
+    <Property Name="ID_CALENDARIO_7PASOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ASISTENCIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HORA_CALEDARIO" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="FECHA_CALENDARIO_7PASOS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_TIPO_ACTIVIDAD" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS100" FromRole="CALENDARIO_7PASOS" ToRole="PERSONAS" />
+    <NavigationProperty Name="TIPO_ACTIVIDAD" Relationship="Self.RefTIPO_ACTIVIDAD99" FromRole="CALENDARIO_7PASOS" ToRole="TIPO_ACTIVIDAD" />
+  </EntityType>
+  <EntityType Name="CITAS">
+    <Key>
+      <PropertyRef Name="ID_CITAS" />
+    </Key>
+    <Property Name="ID_CITAS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ASISTENCIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CITA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HORA_CITA" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="ID_DATOSCITA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_CITAS" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NOTAS" Relationship="Self.RefCITAS141" FromRole="CITAS" ToRole="NOTAS" />
+    <NavigationProperty Name="DATOS_CITA" Relationship="Self.RefDATOS_CITA95" FromRole="CITAS" ToRole="DATOS_CITA" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS97" FromRole="CITAS" ToRole="PERSONAS" />
+    <NavigationProperty Name="TIPO_CITAS" Relationship="Self.RefTIPO_CITAS96" FromRole="CITAS" ToRole="TIPO_CITAS" />
+  </EntityType>
+  <EntityType Name="CONFERENCIAS">
+    <Key>
+      <PropertyRef Name="ID_CONFERENCIAS" />
+    </Key>
+    <Property Name="ID_CONFERENCIAS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ASISTENCIA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_CONFERENCIAS" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="HORA_CONFERENCIAS" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <Property Name="ID_NOMCONFERENCIA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NOM_CONFERENCIA" Relationship="Self.RefNOM_CONFERENCIA122" FromRole="CONFERENCIAS" ToRole="NOM_CONFERENCIA" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS98" FromRole="CONFERENCIAS" ToRole="PERSONAS" />
+  </EntityType>
+  <EntityType Name="CUESTIONARIO_CONOCIMIENTOS">
+    <Key>
+      <PropertyRef Name="ID_CUESTIONARIO" />
+    </Key>
+    <Property Name="ID_CUESTIONARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PREGUNTAS_CUESTIONARIO" Relationship="Self.RefCUESTIONARIO_CONOCIMIENTOS135" FromRole="CUESTIONARIO_CONOCIMIENTOS" ToRole="PREGUNTAS_CUESTIONARIO" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS136" FromRole="CUESTIONARIO_CONOCIMIENTOS" ToRole="PERSONAS" />
+  </EntityType>
+  <EntityType Name="DATOS_CITA">
+    <Key>
+      <PropertyRef Name="ID_DATOSCITA" />
+    </Key>
+    <Property Name="ID_DATOSCITA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONSULTORIO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_ESPECIALISTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CITAS" Relationship="Self.RefDATOS_CITA95" FromRole="DATOS_CITA" ToRole="CITAS" />
+    <NavigationProperty Name="ESPECIALISTA" Relationship="Self.RefESPECIALISTA132" FromRole="DATOS_CITA" ToRole="ESPECIALISTA" />
+  </EntityType>
+  <EntityType Name="ELEMENTO_PERMITIDO">
+    <Key>
+      <PropertyRef Name="ID_ELEMENTO_PERMITIDO" />
+    </Key>
+    <Property Name="ID_ELEMENTO_PERMITIDO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ELEMENTOS_PERMISOS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ELEMENTOS_PERMISOS" Relationship="Self.RefELEMENTOS_PERMISOS111" FromRole="ELEMENTO_PERMITIDO" ToRole="ELEMENTOS_PERMISOS" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.RefTIPO_USUARIO108" FromRole="ELEMENTO_PERMITIDO" ToRole="TIPO_USUARIO" />
+  </EntityType>
+  <EntityType Name="ELEMENTOS">
+    <Key>
+      <PropertyRef Name="ID_ELEMENTOS" />
+    </Key>
+    <Property Name="ID_ELEMENTOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_ELEMENTO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_MODULO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ELEMENTOS_PERMISOS" Relationship="Self.RefELEMENTOS109" FromRole="ELEMENTOS" ToRole="ELEMENTOS_PERMISOS" />
+    <NavigationProperty Name="MODULOS" Relationship="Self.RefMODULOS114" FromRole="ELEMENTOS" ToRole="MODULOS" />
+  </EntityType>
+  <EntityType Name="ELEMENTOS_PERMISOS">
+    <Key>
+      <PropertyRef Name="ID_ELEMENTOS_PERMISOS" />
+    </Key>
+    <Property Name="ID_ELEMENTOS_PERMISOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ELEMENTOS" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERMISOS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ELEMENTO_PERMITIDO" Relationship="Self.RefELEMENTOS_PERMISOS111" FromRole="ELEMENTOS_PERMISOS" ToRole="ELEMENTO_PERMITIDO" />
+    <NavigationProperty Name="ELEMENTOS" Relationship="Self.RefELEMENTOS109" FromRole="ELEMENTOS_PERMISOS" ToRole="ELEMENTOS" />
+    <NavigationProperty Name="PERMISOS" Relationship="Self.RefPERMISOS110" FromRole="ELEMENTOS_PERMISOS" ToRole="PERMISOS" />
+  </EntityType>
+  <EntityType Name="ESPECIALISTA">
+    <Key>
+      <PropertyRef Name="ID_ESPECIALISTA" />
+    </Key>
+    <Property Name="ID_ESPECIALISTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_ESP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOP_ESP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDOM_ESP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TIPOESP" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DATOS_CITA" Relationship="Self.RefESPECIALISTA132" FromRole="ESPECIALISTA" ToRole="DATOS_CITA" />
+    <NavigationProperty Name="NOTAS" Relationship="Self.RefESPECIALISTA140" FromRole="ESPECIALISTA" ToRole="NOTAS" />
+    <NavigationProperty Name="TIPO_ESPECIALISTA" Relationship="Self.RefTIPO_ESPECIALISTA131" FromRole="ESPECIALISTA" ToRole="TIPO_ESPECIALISTA" />
+  </EntityType>
+  <EntityType Name="ESTATUS_USU">
+    <Key>
+      <PropertyRef Name="ID_ESTATUS" />
+    </Key>
+    <Property Name="ID_ESTATUS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_ESTATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.RefESTATUS_USU121" FromRole="ESTATUS_USU" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="MEDICION_GLUCOSA">
+    <Key>
+      <PropertyRef Name="ID_MEDICION_GLUCOSA" />
+    </Key>
+    <Property Name="ID_MEDICION_GLUCOSA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRIMERA_MEDICION" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_MEDICION_GLUCOSA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HORA_MEDICION_GLUCOSA" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="RESULTADO_MEDICION_GLUCOSA" Type="Double" Nullable="false" />
+    <Property Name="ID_TIPMEDICION" Type="Int32" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS120" FromRole="MEDICION_GLUCOSA" ToRole="PERSONAS" />
+    <NavigationProperty Name="Tipo_De_Medicion" Relationship="Self.RefTipo_De_Medicion118" FromRole="MEDICION_GLUCOSA" ToRole="Tipo_De_Medicion" />
+  </EntityType>
+  <EntityType Name="MODULOS">
+    <Key>
+      <PropertyRef Name="ID_MODULO" />
+    </Key>
+    <Property Name="ID_MODULO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_MODULO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DES_MODULO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ELEMENTOS" Relationship="Self.RefMODULOS114" FromRole="MODULOS" ToRole="ELEMENTOS" />
+    <NavigationProperty Name="PERFIL_MODULOS" Relationship="Self.RefMODULOS115" FromRole="MODULOS" ToRole="PERFIL_MODULOS" />
+  </EntityType>
+  <EntityType Name="NOM_CONFERENCIA">
+    <Key>
+      <PropertyRef Name="ID_NOMCONFERENCIA" />
+    </Key>
+    <Property Name="ID_NOMCONFERENCIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_CONF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CONFERENCIAS" Relationship="Self.RefNOM_CONFERENCIA122" FromRole="NOM_CONFERENCIA" ToRole="CONFERENCIAS" />
+  </EntityType>
+  <EntityType Name="NOTAS">
+    <Key>
+      <PropertyRef Name="ID_NOTA" />
+    </Key>
+    <Property Name="ID_NOTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TXT_NOTA" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_ESPECIALISTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_CITAS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CITAS" Relationship="Self.RefCITAS141" FromRole="NOTAS" ToRole="CITAS" />
+    <NavigationProperty Name="ESPECIALISTA" Relationship="Self.RefESPECIALISTA140" FromRole="NOTAS" ToRole="ESPECIALISTA" />
+  </EntityType>
+  <EntityType Name="PERFIL_MODULOS">
+    <Key>
+      <PropertyRef Name="ID_PERFIL_MODULOS" />
+    </Key>
+    <Property Name="ID_PERFIL_MODULOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_MODULO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MODULOS" Relationship="Self.RefMODULOS115" FromRole="PERFIL_MODULOS" ToRole="MODULOS" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.RefTIPO_USUARIO113" FromRole="PERFIL_MODULOS" ToRole="TIPO_USUARIO" />
+  </EntityType>
+  <EntityType Name="PERMISOS">
+    <Key>
+      <PropertyRef Name="ID_PERMISOS" />
+    </Key>
+    <Property Name="ID_PERMISOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_PERMISOS" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ELEMENTOS_PERMISOS" Relationship="Self.RefPERMISOS110" FromRole="PERMISOS" ToRole="ELEMENTOS_PERMISOS" />
+  </EntityType>
+  <EntityType Name="PERSONAS">
+    <Key>
+      <PropertyRef Name="ID_PERSONA" />
+    </Key>
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EDAD" Type="Int32" />
+    <Property Name="NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ANIOSCONDIABETES" Type="Int32" Nullable="false" />
+    <Property Name="APELLIDO_PATER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="APELLIDO_MATER" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FECHA_INICIO" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TELEFONO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DIRECCION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CALENDARIO_7PASOS" Relationship="Self.RefPERSONAS100" FromRole="PERSONAS" ToRole="CALENDARIO_7PASOS" />
+    <NavigationProperty Name="CITAS" Relationship="Self.RefPERSONAS97" FromRole="PERSONAS" ToRole="CITAS" />
+    <NavigationProperty Name="CONFERENCIAS" Relationship="Self.RefPERSONAS98" FromRole="PERSONAS" ToRole="CONFERENCIAS" />
+    <NavigationProperty Name="CUESTIONARIO_CONOCIMIENTOS" Relationship="Self.RefPERSONAS136" FromRole="PERSONAS" ToRole="CUESTIONARIO_CONOCIMIENTOS" />
+    <NavigationProperty Name="MEDICION_GLUCOSA" Relationship="Self.RefPERSONAS120" FromRole="PERSONAS" ToRole="MEDICION_GLUCOSA" />
+    <NavigationProperty Name="PESO_TALLA" Relationship="Self.RefPERSONAS104" FromRole="PERSONAS" ToRole="PESO_TALLA" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.RefPERSONAS107" FromRole="PERSONAS" ToRole="USUARIO" />
+    <NavigationProperty Name="PRUEBA_BECK" Relationship="Self.RefPERSONAS129" FromRole="PERSONAS" ToRole="PRUEBA_BECK" />
+    <NavigationProperty Name="Recomendaciones" Relationship="Self.RefPERSONAS143" FromRole="PERSONAS" ToRole="Recomendaciones" />
+  </EntityType>
+  <EntityType Name="PESO_TALLA">
+    <Key>
+      <PropertyRef Name="ID_PESO_TALLA" />
+    </Key>
+    <Property Name="ID_PESO_TALLA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FECHA_PESO_TALLA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="RESULTADO_PESO" Type="Double" Nullable="false" />
+    <Property Name="RESULTADO_TALLA" Type="Double" Nullable="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS104" FromRole="PESO_TALLA" ToRole="PERSONAS" />
+  </EntityType>
+  <EntityType Name="PREGUNTA">
+    <Key>
+      <PropertyRef Name="ID_PREGUNTA" />
+    </Key>
+    <Property Name="ID_PREGUNTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TXTPREGUNTA" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PREGUNTAS_PRUEBA" Relationship="Self.RefPREGUNTA127" FromRole="PREGUNTA" ToRole="PREGUNTAS_PRUEBA" />
+  </EntityType>
+  <EntityType Name="PREGUNTA_C">
+    <Key>
+      <PropertyRef Name="ID_PREGUNTAC" />
+    </Key>
+    <Property Name="ID_PREGUNTAC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PREGUNTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PREGUNTAS_CUESTIONARIO" Relationship="Self.RefPREGUNTA_C134" FromRole="PREGUNTA_C" ToRole="PREGUNTAS_CUESTIONARIO" />
+  </EntityType>
+  <EntityType Name="PREGUNTAS_CUESTIONARIO">
+    <Key>
+      <PropertyRef Name="ID_CUESPREGUNTA" />
+    </Key>
+    <Property Name="ID_CUESPREGUNTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_RESPUESTAC" Type="Int32" Nullable="false" />
+    <Property Name="ID_PREGUNTAC" Type="Int32" Nullable="false" />
+    <Property Name="ID_CUESTIONARIO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CUESTIONARIO_CONOCIMIENTOS" Relationship="Self.RefCUESTIONARIO_CONOCIMIENTOS135" FromRole="PREGUNTAS_CUESTIONARIO" ToRole="CUESTIONARIO_CONOCIMIENTOS" />
+    <NavigationProperty Name="PREGUNTA_C" Relationship="Self.RefPREGUNTA_C134" FromRole="PREGUNTAS_CUESTIONARIO" ToRole="PREGUNTA_C" />
+    <NavigationProperty Name="RESPUESTA_C" Relationship="Self.RefRESPUESTA_C133" FromRole="PREGUNTAS_CUESTIONARIO" ToRole="RESPUESTA_C" />
+  </EntityType>
+  <EntityType Name="PREGUNTAS_PRUEBA">
+    <Key>
+      <PropertyRef Name="ID_PREGUNTASBECK" />
+    </Key>
+    <Property Name="ID_PREGUNTASBECK" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PREGUNTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_PRUEBA" Type="Int32" Nullable="false" />
+    <Property Name="ID_RESPUESTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PREGUNTA" Relationship="Self.RefPREGUNTA127" FromRole="PREGUNTAS_PRUEBA" ToRole="PREGUNTA" />
+    <NavigationProperty Name="PRUEBA_BECK" Relationship="Self.RefPRUEBA_BECK126" FromRole="PREGUNTAS_PRUEBA" ToRole="PRUEBA_BECK" />
+    <NavigationProperty Name="RESPUESTAS" Relationship="Self.RefRESPUESTAS128" FromRole="PREGUNTAS_PRUEBA" ToRole="RESPUESTAS" />
+  </EntityType>
+  <EntityType Name="PRUEBA_BECK">
+    <Key>
+      <PropertyRef Name="ID_PRUEBA" />
+    </Key>
+    <Property Name="ID_PRUEBA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS129" FromRole="PRUEBA_BECK" ToRole="PERSONAS" />
+    <NavigationProperty Name="PREGUNTAS_PRUEBA" Relationship="Self.RefPRUEBA_BECK126" FromRole="PRUEBA_BECK" ToRole="PREGUNTAS_PRUEBA" />
+  </EntityType>
+  <EntityType Name="Recomendaciones">
+    <Key>
+      <PropertyRef Name="ID_RECOMENDACION" />
+    </Key>
+    <Property Name="ID_RECOMENDACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TXT_RECOMENDACION" Type="String" MaxLength="350" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS143" FromRole="Recomendaciones" ToRole="PERSONAS" />
+  </EntityType>
+  <EntityType Name="RESPUESTA_C">
+    <Key>
+      <PropertyRef Name="ID_RESPUESTAC" />
+    </Key>
+    <Property Name="ID_RESPUESTAC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_RESPUESTA" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PREGUNTAS_CUESTIONARIO" Relationship="Self.RefRESPUESTA_C133" FromRole="RESPUESTA_C" ToRole="PREGUNTAS_CUESTIONARIO" />
+  </EntityType>
+  <EntityType Name="RESPUESTAS">
+    <Key>
+      <PropertyRef Name="ID_RESPUESTA" />
+    </Key>
+    <Property Name="ID_RESPUESTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TXTRESPUESTA" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="PREGUNTAS_PRUEBA" Relationship="Self.RefRESPUESTAS128" FromRole="RESPUESTAS" ToRole="PREGUNTAS_PRUEBA" />
+  </EntityType>
+  <EntityType Name="TIPO_ACTIVIDAD">
+    <Key>
+      <PropertyRef Name="ID_TIPO_ACTIVIDAD" />
+    </Key>
+    <Property Name="ID_TIPO_ACTIVIDAD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_TIPO_ACTIVIDAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CALENDARIO_7PASOS" Relationship="Self.RefTIPO_ACTIVIDAD99" FromRole="TIPO_ACTIVIDAD" ToRole="CALENDARIO_7PASOS" />
+  </EntityType>
+  <EntityType Name="TIPO_CITAS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_CITAS" />
+    </Key>
+    <Property Name="ID_TIPO_CITAS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NIOMBRE_TIPO_CITAS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="CITAS" Relationship="Self.RefTIPO_CITAS96" FromRole="TIPO_CITAS" ToRole="CITAS" />
+  </EntityType>
+  <EntityType Name="Tipo_De_Medicion">
+    <Key>
+      <PropertyRef Name="ID_TIPMEDICION" />
+    </Key>
+    <Property Name="ID_TIPMEDICION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_MEDICION" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MEDICION_GLUCOSA" Relationship="Self.RefTipo_De_Medicion118" FromRole="Tipo_De_Medicion" ToRole="MEDICION_GLUCOSA" />
+  </EntityType>
+  <EntityType Name="TIPO_ESPECIALISTA">
+    <Key>
+      <PropertyRef Name="ID_TIPOESP" />
+    </Key>
+    <Property Name="ID_TIPOESP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM_TIPOESPECIALISTA" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ESPECIALISTA" Relationship="Self.RefTIPO_ESPECIALISTA131" FromRole="TIPO_ESPECIALISTA" ToRole="ESPECIALISTA" />
+  </EntityType>
+  <EntityType Name="TIPO_USUARIO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_USUARIO" />
+    </Key>
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE_TIPO_USUARIO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ELEMENTO_PERMITIDO" Relationship="Self.RefTIPO_USUARIO108" FromRole="TIPO_USUARIO" ToRole="ELEMENTO_PERMITIDO" />
+    <NavigationProperty Name="PERFIL_MODULOS" Relationship="Self.RefTIPO_USUARIO113" FromRole="TIPO_USUARIO" ToRole="PERFIL_MODULOS" />
+    <NavigationProperty Name="USUARIO" Relationship="Self.RefTIPO_USUARIO112" FromRole="TIPO_USUARIO" ToRole="USUARIO" />
+  </EntityType>
+  <EntityType Name="USUARIO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TELEFONO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRASENA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ID_PERSONA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTATUS" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ESTATUS_USU" Relationship="Self.RefESTATUS_USU121" FromRole="USUARIO" ToRole="ESTATUS_USU" />
+    <NavigationProperty Name="PERSONAS" Relationship="Self.RefPERSONAS107" FromRole="USUARIO" ToRole="PERSONAS" />
+    <NavigationProperty Name="TIPO_USUARIO" Relationship="Self.RefTIPO_USUARIO112" FromRole="USUARIO" ToRole="TIPO_USUARIO" />
+  </EntityType>
+  <Association Name="RefPERSONAS100">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="CALENDARIO_7PASOS" Type="Self.CALENDARIO_7PASOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="CALENDARIO_7PASOS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_ACTIVIDAD99">
+    <End Role="TIPO_ACTIVIDAD" Type="Self.TIPO_ACTIVIDAD" Multiplicity="1" />
+    <End Role="CALENDARIO_7PASOS" Type="Self.CALENDARIO_7PASOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_ACTIVIDAD">
+        <PropertyRef Name="ID_TIPO_ACTIVIDAD" />
+      </Principal>
+      <Dependent Role="CALENDARIO_7PASOS">
+        <PropertyRef Name="ID_TIPO_ACTIVIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefCITAS141">
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="1" />
+    <End Role="NOTAS" Type="Self.NOTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITAS">
+        <PropertyRef Name="ID_CITAS" />
+      </Principal>
+      <Dependent Role="NOTAS">
+        <PropertyRef Name="ID_CITAS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefDATOS_CITA95">
+    <End Role="DATOS_CITA" Type="Self.DATOS_CITA" Multiplicity="1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATOS_CITA">
+        <PropertyRef Name="ID_DATOSCITA" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="ID_DATOSCITA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS97">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_CITAS96">
+    <End Role="TIPO_CITAS" Type="Self.TIPO_CITAS" Multiplicity="1" />
+    <End Role="CITAS" Type="Self.CITAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_CITAS">
+        <PropertyRef Name="ID_TIPO_CITAS" />
+      </Principal>
+      <Dependent Role="CITAS">
+        <PropertyRef Name="ID_TIPO_CITAS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefNOM_CONFERENCIA122">
+    <End Role="NOM_CONFERENCIA" Type="Self.NOM_CONFERENCIA" Multiplicity="1" />
+    <End Role="CONFERENCIAS" Type="Self.CONFERENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NOM_CONFERENCIA">
+        <PropertyRef Name="ID_NOMCONFERENCIA" />
+      </Principal>
+      <Dependent Role="CONFERENCIAS">
+        <PropertyRef Name="ID_NOMCONFERENCIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS98">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="CONFERENCIAS" Type="Self.CONFERENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="CONFERENCIAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefCUESTIONARIO_CONOCIMIENTOS135">
+    <End Role="CUESTIONARIO_CONOCIMIENTOS" Type="Self.CUESTIONARIO_CONOCIMIENTOS" Multiplicity="1" />
+    <End Role="PREGUNTAS_CUESTIONARIO" Type="Self.PREGUNTAS_CUESTIONARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUESTIONARIO_CONOCIMIENTOS">
+        <PropertyRef Name="ID_CUESTIONARIO" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_CUESTIONARIO">
+        <PropertyRef Name="ID_CUESTIONARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS136">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="CUESTIONARIO_CONOCIMIENTOS" Type="Self.CUESTIONARIO_CONOCIMIENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="CUESTIONARIO_CONOCIMIENTOS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefESPECIALISTA132">
+    <End Role="ESPECIALISTA" Type="Self.ESPECIALISTA" Multiplicity="1" />
+    <End Role="DATOS_CITA" Type="Self.DATOS_CITA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESPECIALISTA">
+        <PropertyRef Name="ID_ESPECIALISTA" />
+      </Principal>
+      <Dependent Role="DATOS_CITA">
+        <PropertyRef Name="ID_ESPECIALISTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefELEMENTOS_PERMISOS111">
+    <End Role="ELEMENTOS_PERMISOS" Type="Self.ELEMENTOS_PERMISOS" Multiplicity="1" />
+    <End Role="ELEMENTO_PERMITIDO" Type="Self.ELEMENTO_PERMITIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ELEMENTOS_PERMISOS">
+        <PropertyRef Name="ID_ELEMENTOS_PERMISOS" />
+      </Principal>
+      <Dependent Role="ELEMENTO_PERMITIDO">
+        <PropertyRef Name="ID_ELEMENTOS_PERMISOS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_USUARIO108">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
+    <End Role="ELEMENTO_PERMITIDO" Type="Self.ELEMENTO_PERMITIDO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="ELEMENTO_PERMITIDO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefELEMENTOS109">
+    <End Role="ELEMENTOS" Type="Self.ELEMENTOS" Multiplicity="1" />
+    <End Role="ELEMENTOS_PERMISOS" Type="Self.ELEMENTOS_PERMISOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ELEMENTOS">
+        <PropertyRef Name="ID_ELEMENTOS" />
+      </Principal>
+      <Dependent Role="ELEMENTOS_PERMISOS">
+        <PropertyRef Name="ID_ELEMENTOS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefMODULOS114">
+    <End Role="MODULOS" Type="Self.MODULOS" Multiplicity="1" />
+    <End Role="ELEMENTOS" Type="Self.ELEMENTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULOS">
+        <PropertyRef Name="ID_MODULO" />
+      </Principal>
+      <Dependent Role="ELEMENTOS">
+        <PropertyRef Name="ID_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERMISOS110">
+    <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="1" />
+    <End Role="ELEMENTOS_PERMISOS" Type="Self.ELEMENTOS_PERMISOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERMISOS">
+        <PropertyRef Name="ID_PERMISOS" />
+      </Principal>
+      <Dependent Role="ELEMENTOS_PERMISOS">
+        <PropertyRef Name="ID_PERMISOS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefESPECIALISTA140">
+    <End Role="ESPECIALISTA" Type="Self.ESPECIALISTA" Multiplicity="1" />
+    <End Role="NOTAS" Type="Self.NOTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESPECIALISTA">
+        <PropertyRef Name="ID_ESPECIALISTA" />
+      </Principal>
+      <Dependent Role="NOTAS">
+        <PropertyRef Name="ID_ESPECIALISTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_ESPECIALISTA131">
+    <End Role="TIPO_ESPECIALISTA" Type="Self.TIPO_ESPECIALISTA" Multiplicity="1" />
+    <End Role="ESPECIALISTA" Type="Self.ESPECIALISTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_ESPECIALISTA">
+        <PropertyRef Name="ID_TIPOESP" />
+      </Principal>
+      <Dependent Role="ESPECIALISTA">
+        <PropertyRef Name="ID_TIPOESP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefESTATUS_USU121">
+    <End Role="ESTATUS_USU" Type="Self.ESTATUS_USU" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTATUS_USU">
+        <PropertyRef Name="ID_ESTATUS" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_ESTATUS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS120">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="MEDICION_GLUCOSA" Type="Self.MEDICION_GLUCOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="MEDICION_GLUCOSA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTipo_De_Medicion118">
+    <End Role="Tipo_De_Medicion" Type="Self.Tipo_De_Medicion" Multiplicity="1" />
+    <End Role="MEDICION_GLUCOSA" Type="Self.MEDICION_GLUCOSA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipo_De_Medicion">
+        <PropertyRef Name="ID_TIPMEDICION" />
+      </Principal>
+      <Dependent Role="MEDICION_GLUCOSA">
+        <PropertyRef Name="ID_TIPMEDICION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefMODULOS115">
+    <End Role="MODULOS" Type="Self.MODULOS" Multiplicity="1" />
+    <End Role="PERFIL_MODULOS" Type="Self.PERFIL_MODULOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MODULOS">
+        <PropertyRef Name="ID_MODULO" />
+      </Principal>
+      <Dependent Role="PERFIL_MODULOS">
+        <PropertyRef Name="ID_MODULO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_USUARIO113">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
+    <End Role="PERFIL_MODULOS" Type="Self.PERFIL_MODULOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="PERFIL_MODULOS">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS104">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="PESO_TALLA" Type="Self.PESO_TALLA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="PESO_TALLA">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS107">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS129">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="PRUEBA_BECK" Type="Self.PRUEBA_BECK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="PRUEBA_BECK">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPERSONAS143">
+    <End Role="PERSONAS" Type="Self.PERSONAS" Multiplicity="1" />
+    <End Role="Recomendaciones" Type="Self.Recomendaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONAS">
+        <PropertyRef Name="ID_PERSONA" />
+      </Principal>
+      <Dependent Role="Recomendaciones">
+        <PropertyRef Name="ID_PERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPREGUNTA127">
+    <End Role="PREGUNTA" Type="Self.PREGUNTA" Multiplicity="1" />
+    <End Role="PREGUNTAS_PRUEBA" Type="Self.PREGUNTAS_PRUEBA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PREGUNTA">
+        <PropertyRef Name="ID_PREGUNTA" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_PRUEBA">
+        <PropertyRef Name="ID_PREGUNTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPREGUNTA_C134">
+    <End Role="PREGUNTA_C" Type="Self.PREGUNTA_C" Multiplicity="1" />
+    <End Role="PREGUNTAS_CUESTIONARIO" Type="Self.PREGUNTAS_CUESTIONARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PREGUNTA_C">
+        <PropertyRef Name="ID_PREGUNTAC" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_CUESTIONARIO">
+        <PropertyRef Name="ID_PREGUNTAC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefRESPUESTA_C133">
+    <End Role="RESPUESTA_C" Type="Self.RESPUESTA_C" Multiplicity="1" />
+    <End Role="PREGUNTAS_CUESTIONARIO" Type="Self.PREGUNTAS_CUESTIONARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RESPUESTA_C">
+        <PropertyRef Name="ID_RESPUESTAC" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_CUESTIONARIO">
+        <PropertyRef Name="ID_RESPUESTAC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPRUEBA_BECK126">
+    <End Role="PRUEBA_BECK" Type="Self.PRUEBA_BECK" Multiplicity="1" />
+    <End Role="PREGUNTAS_PRUEBA" Type="Self.PREGUNTAS_PRUEBA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRUEBA_BECK">
+        <PropertyRef Name="ID_PRUEBA" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_PRUEBA">
+        <PropertyRef Name="ID_PRUEBA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefRESPUESTAS128">
+    <End Role="RESPUESTAS" Type="Self.RESPUESTAS" Multiplicity="1" />
+    <End Role="PREGUNTAS_PRUEBA" Type="Self.PREGUNTAS_PRUEBA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RESPUESTAS">
+        <PropertyRef Name="ID_RESPUESTA" />
+      </Principal>
+      <Dependent Role="PREGUNTAS_PRUEBA">
+        <PropertyRef Name="ID_RESPUESTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTIPO_USUARIO112">
+    <End Role="TIPO_USUARIO" Type="Self.TIPO_USUARIO" Multiplicity="1" />
+    <End Role="USUARIO" Type="Self.USUARIO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TIPO_USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Principal>
+      <Dependent Role="USUARIO">
+        <PropertyRef Name="ID_TIPO_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbDiabetesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CALENDARIO_7PASOS" EntityType="Self.CALENDARIO_7PASOS" />
+    <EntitySet Name="CITAS" EntityType="Self.CITAS" />
+    <EntitySet Name="CONFERENCIAS" EntityType="Self.CONFERENCIAS" />
+    <EntitySet Name="CUESTIONARIO_CONOCIMIENTOS" EntityType="Self.CUESTIONARIO_CONOCIMIENTOS" />
+    <EntitySet Name="DATOS_CITA" EntityType="Self.DATOS_CITA" />
+    <EntitySet Name="ELEMENTO_PERMITIDO" EntityType="Self.ELEMENTO_PERMITIDO" />
+    <EntitySet Name="ELEMENTOS" EntityType="Self.ELEMENTOS" />
+    <EntitySet Name="ELEMENTOS_PERMISOS" EntityType="Self.ELEMENTOS_PERMISOS" />
+    <EntitySet Name="ESPECIALISTA" EntityType="Self.ESPECIALISTA" />
+    <EntitySet Name="ESTATUS_USU" EntityType="Self.ESTATUS_USU" />
+    <EntitySet Name="MEDICION_GLUCOSA" EntityType="Self.MEDICION_GLUCOSA" />
+    <EntitySet Name="MODULOS" EntityType="Self.MODULOS" />
+    <EntitySet Name="NOM_CONFERENCIA" EntityType="Self.NOM_CONFERENCIA" />
+    <EntitySet Name="NOTAS" EntityType="Self.NOTAS" />
+    <EntitySet Name="PERFIL_MODULOS" EntityType="Self.PERFIL_MODULOS" />
+    <EntitySet Name="PERMISOS" EntityType="Self.PERMISOS" />
+    <EntitySet Name="PERSONAS" EntityType="Self.PERSONAS" />
+    <EntitySet Name="PESO_TALLA" EntityType="Self.PESO_TALLA" />
+    <EntitySet Name="PREGUNTA" EntityType="Self.PREGUNTA" />
+    <EntitySet Name="PREGUNTA_C" EntityType="Self.PREGUNTA_C" />
+    <EntitySet Name="PREGUNTAS_CUESTIONARIO" EntityType="Self.PREGUNTAS_CUESTIONARIO" />
+    <EntitySet Name="PREGUNTAS_PRUEBA" EntityType="Self.PREGUNTAS_PRUEBA" />
+    <EntitySet Name="PRUEBA_BECK" EntityType="Self.PRUEBA_BECK" />
+    <EntitySet Name="Recomendaciones" EntityType="Self.Recomendaciones" />
+    <EntitySet Name="RESPUESTA_C" EntityType="Self.RESPUESTA_C" />
+    <EntitySet Name="RESPUESTAS" EntityType="Self.RESPUESTAS" />
+    <EntitySet Name="TIPO_ACTIVIDAD" EntityType="Self.TIPO_ACTIVIDAD" />
+    <EntitySet Name="TIPO_CITAS" EntityType="Self.TIPO_CITAS" />
+    <EntitySet Name="Tipo_De_Medicion" EntityType="Self.Tipo_De_Medicion" />
+    <EntitySet Name="TIPO_ESPECIALISTA" EntityType="Self.TIPO_ESPECIALISTA" />
+    <EntitySet Name="TIPO_USUARIO" EntityType="Self.TIPO_USUARIO" />
+    <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+    <AssociationSet Name="RefPERSONAS100" Association="Self.RefPERSONAS100">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="CALENDARIO_7PASOS" EntitySet="CALENDARIO_7PASOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_ACTIVIDAD99" Association="Self.RefTIPO_ACTIVIDAD99">
+      <End Role="TIPO_ACTIVIDAD" EntitySet="TIPO_ACTIVIDAD" />
+      <End Role="CALENDARIO_7PASOS" EntitySet="CALENDARIO_7PASOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefCITAS141" Association="Self.RefCITAS141">
+      <End Role="CITAS" EntitySet="CITAS" />
+      <End Role="NOTAS" EntitySet="NOTAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefDATOS_CITA95" Association="Self.RefDATOS_CITA95">
+      <End Role="DATOS_CITA" EntitySet="DATOS_CITA" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS97" Association="Self.RefPERSONAS97">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_CITAS96" Association="Self.RefTIPO_CITAS96">
+      <End Role="TIPO_CITAS" EntitySet="TIPO_CITAS" />
+      <End Role="CITAS" EntitySet="CITAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefNOM_CONFERENCIA122" Association="Self.RefNOM_CONFERENCIA122">
+      <End Role="NOM_CONFERENCIA" EntitySet="NOM_CONFERENCIA" />
+      <End Role="CONFERENCIAS" EntitySet="CONFERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS98" Association="Self.RefPERSONAS98">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="CONFERENCIAS" EntitySet="CONFERENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefCUESTIONARIO_CONOCIMIENTOS135" Association="Self.RefCUESTIONARIO_CONOCIMIENTOS135">
+      <End Role="CUESTIONARIO_CONOCIMIENTOS" EntitySet="CUESTIONARIO_CONOCIMIENTOS" />
+      <End Role="PREGUNTAS_CUESTIONARIO" EntitySet="PREGUNTAS_CUESTIONARIO" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS136" Association="Self.RefPERSONAS136">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="CUESTIONARIO_CONOCIMIENTOS" EntitySet="CUESTIONARIO_CONOCIMIENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefESPECIALISTA132" Association="Self.RefESPECIALISTA132">
+      <End Role="ESPECIALISTA" EntitySet="ESPECIALISTA" />
+      <End Role="DATOS_CITA" EntitySet="DATOS_CITA" />
+    </AssociationSet>
+    <AssociationSet Name="RefELEMENTOS_PERMISOS111" Association="Self.RefELEMENTOS_PERMISOS111">
+      <End Role="ELEMENTOS_PERMISOS" EntitySet="ELEMENTOS_PERMISOS" />
+      <End Role="ELEMENTO_PERMITIDO" EntitySet="ELEMENTO_PERMITIDO" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_USUARIO108" Association="Self.RefTIPO_USUARIO108">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="ELEMENTO_PERMITIDO" EntitySet="ELEMENTO_PERMITIDO" />
+    </AssociationSet>
+    <AssociationSet Name="RefELEMENTOS109" Association="Self.RefELEMENTOS109">
+      <End Role="ELEMENTOS" EntitySet="ELEMENTOS" />
+      <End Role="ELEMENTOS_PERMISOS" EntitySet="ELEMENTOS_PERMISOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefMODULOS114" Association="Self.RefMODULOS114">
+      <End Role="MODULOS" EntitySet="MODULOS" />
+      <End Role="ELEMENTOS" EntitySet="ELEMENTOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERMISOS110" Association="Self.RefPERMISOS110">
+      <End Role="PERMISOS" EntitySet="PERMISOS" />
+      <End Role="ELEMENTOS_PERMISOS" EntitySet="ELEMENTOS_PERMISOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefESPECIALISTA140" Association="Self.RefESPECIALISTA140">
+      <End Role="ESPECIALISTA" EntitySet="ESPECIALISTA" />
+      <End Role="NOTAS" EntitySet="NOTAS" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_ESPECIALISTA131" Association="Self.RefTIPO_ESPECIALISTA131">
+      <End Role="TIPO_ESPECIALISTA" EntitySet="TIPO_ESPECIALISTA" />
+      <End Role="ESPECIALISTA" EntitySet="ESPECIALISTA" />
+    </AssociationSet>
+    <AssociationSet Name="RefESTATUS_USU121" Association="Self.RefESTATUS_USU121">
+      <End Role="ESTATUS_USU" EntitySet="ESTATUS_USU" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS120" Association="Self.RefPERSONAS120">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="MEDICION_GLUCOSA" EntitySet="MEDICION_GLUCOSA" />
+    </AssociationSet>
+    <AssociationSet Name="RefTipo_De_Medicion118" Association="Self.RefTipo_De_Medicion118">
+      <End Role="Tipo_De_Medicion" EntitySet="Tipo_De_Medicion" />
+      <End Role="MEDICION_GLUCOSA" EntitySet="MEDICION_GLUCOSA" />
+    </AssociationSet>
+    <AssociationSet Name="RefMODULOS115" Association="Self.RefMODULOS115">
+      <End Role="MODULOS" EntitySet="MODULOS" />
+      <End Role="PERFIL_MODULOS" EntitySet="PERFIL_MODULOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_USUARIO113" Association="Self.RefTIPO_USUARIO113">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="PERFIL_MODULOS" EntitySet="PERFIL_MODULOS" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS104" Association="Self.RefPERSONAS104">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="PESO_TALLA" EntitySet="PESO_TALLA" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS107" Association="Self.RefPERSONAS107">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS129" Association="Self.RefPERSONAS129">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="PRUEBA_BECK" EntitySet="PRUEBA_BECK" />
+    </AssociationSet>
+    <AssociationSet Name="RefPERSONAS143" Association="Self.RefPERSONAS143">
+      <End Role="PERSONAS" EntitySet="PERSONAS" />
+      <End Role="Recomendaciones" EntitySet="Recomendaciones" />
+    </AssociationSet>
+    <AssociationSet Name="RefPREGUNTA127" Association="Self.RefPREGUNTA127">
+      <End Role="PREGUNTA" EntitySet="PREGUNTA" />
+      <End Role="PREGUNTAS_PRUEBA" EntitySet="PREGUNTAS_PRUEBA" />
+    </AssociationSet>
+    <AssociationSet Name="RefPREGUNTA_C134" Association="Self.RefPREGUNTA_C134">
+      <End Role="PREGUNTA_C" EntitySet="PREGUNTA_C" />
+      <End Role="PREGUNTAS_CUESTIONARIO" EntitySet="PREGUNTAS_CUESTIONARIO" />
+    </AssociationSet>
+    <AssociationSet Name="RefRESPUESTA_C133" Association="Self.RefRESPUESTA_C133">
+      <End Role="RESPUESTA_C" EntitySet="RESPUESTA_C" />
+      <End Role="PREGUNTAS_CUESTIONARIO" EntitySet="PREGUNTAS_CUESTIONARIO" />
+    </AssociationSet>
+    <AssociationSet Name="RefPRUEBA_BECK126" Association="Self.RefPRUEBA_BECK126">
+      <End Role="PRUEBA_BECK" EntitySet="PRUEBA_BECK" />
+      <End Role="PREGUNTAS_PRUEBA" EntitySet="PREGUNTAS_PRUEBA" />
+    </AssociationSet>
+    <AssociationSet Name="RefRESPUESTAS128" Association="Self.RefRESPUESTAS128">
+      <End Role="RESPUESTAS" EntitySet="RESPUESTAS" />
+      <End Role="PREGUNTAS_PRUEBA" EntitySet="PREGUNTAS_PRUEBA" />
+    </AssociationSet>
+    <AssociationSet Name="RefTIPO_USUARIO112" Association="Self.RefTIPO_USUARIO112">
+      <End Role="TIPO_USUARIO" EntitySet="TIPO_USUARIO" />
+      <End Role="USUARIO" EntitySet="USUARIO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

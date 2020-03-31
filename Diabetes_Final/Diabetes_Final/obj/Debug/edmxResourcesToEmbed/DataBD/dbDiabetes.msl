@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbDiabetesModelStoreContainer" CdmEntityContainer="dbDiabetesEntities">
+    <EntitySetMapping Name="CALENDARIO_7PASOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.CALENDARIO_7PASOS">
+        <MappingFragment StoreEntitySet="CALENDARIO_7PASOS">
+          <ScalarProperty Name="ID_CALENDARIO_7PASOS" ColumnName="ID_CALENDARIO_7PASOS" />
+          <ScalarProperty Name="ASISTENCIA" ColumnName="ASISTENCIA" />
+          <ScalarProperty Name="HORA_CALEDARIO" ColumnName="HORA_CALEDARIO" />
+          <ScalarProperty Name="FECHA_CALENDARIO_7PASOS" ColumnName="FECHA_CALENDARIO_7PASOS" />
+          <ScalarProperty Name="ID_TIPO_ACTIVIDAD" ColumnName="ID_TIPO_ACTIVIDAD" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CITAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.CITAS">
+        <MappingFragment StoreEntitySet="CITAS">
+          <ScalarProperty Name="ID_CITAS" ColumnName="ID_CITAS" />
+          <ScalarProperty Name="ASISTENCIA" ColumnName="ASISTENCIA" />
+          <ScalarProperty Name="FECHA_CITA" ColumnName="FECHA_CITA" />
+          <ScalarProperty Name="HORA_CITA" ColumnName="HORA_CITA" />
+          <ScalarProperty Name="ID_DATOSCITA" ColumnName="ID_DATOSCITA" />
+          <ScalarProperty Name="ID_TIPO_CITAS" ColumnName="ID_TIPO_CITAS" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONFERENCIAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.CONFERENCIAS">
+        <MappingFragment StoreEntitySet="CONFERENCIAS">
+          <ScalarProperty Name="ID_CONFERENCIAS" ColumnName="ID_CONFERENCIAS" />
+          <ScalarProperty Name="ASISTENCIA" ColumnName="ASISTENCIA" />
+          <ScalarProperty Name="FECHA_CONFERENCIAS" ColumnName="FECHA_CONFERENCIAS" />
+          <ScalarProperty Name="HORA_CONFERENCIAS" ColumnName="HORA_CONFERENCIAS" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_NOMCONFERENCIA" ColumnName="ID_NOMCONFERENCIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUESTIONARIO_CONOCIMIENTOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.CUESTIONARIO_CONOCIMIENTOS">
+        <MappingFragment StoreEntitySet="CUESTIONARIO_CONOCIMIENTOS">
+          <ScalarProperty Name="ID_CUESTIONARIO" ColumnName="ID_CUESTIONARIO" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DATOS_CITA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.DATOS_CITA">
+        <MappingFragment StoreEntitySet="DATOS_CITA">
+          <ScalarProperty Name="ID_DATOSCITA" ColumnName="ID_DATOSCITA" />
+          <ScalarProperty Name="CONSULTORIO" ColumnName="CONSULTORIO" />
+          <ScalarProperty Name="ID_ESPECIALISTA" ColumnName="ID_ESPECIALISTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELEMENTO_PERMITIDO">
+      <EntityTypeMapping TypeName="dbDiabetesModel.ELEMENTO_PERMITIDO">
+        <MappingFragment StoreEntitySet="ELEMENTO_PERMITIDO">
+          <ScalarProperty Name="ID_ELEMENTO_PERMITIDO" ColumnName="ID_ELEMENTO_PERMITIDO" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="ID_ELEMENTOS_PERMISOS" ColumnName="ID_ELEMENTOS_PERMISOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELEMENTOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.ELEMENTOS">
+        <MappingFragment StoreEntitySet="ELEMENTOS">
+          <ScalarProperty Name="ID_ELEMENTOS" ColumnName="ID_ELEMENTOS" />
+          <ScalarProperty Name="NOM_ELEMENTO" ColumnName="NOM_ELEMENTO" />
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ELEMENTOS_PERMISOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.ELEMENTOS_PERMISOS">
+        <MappingFragment StoreEntitySet="ELEMENTOS_PERMISOS">
+          <ScalarProperty Name="ID_ELEMENTOS_PERMISOS" ColumnName="ID_ELEMENTOS_PERMISOS" />
+          <ScalarProperty Name="ID_ELEMENTOS" ColumnName="ID_ELEMENTOS" />
+          <ScalarProperty Name="ID_PERMISOS" ColumnName="ID_PERMISOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESPECIALISTA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.ESPECIALISTA">
+        <MappingFragment StoreEntitySet="ESPECIALISTA">
+          <ScalarProperty Name="ID_ESPECIALISTA" ColumnName="ID_ESPECIALISTA" />
+          <ScalarProperty Name="NOMBRE_ESP" ColumnName="NOMBRE_ESP" />
+          <ScalarProperty Name="APELLIDOP_ESP" ColumnName="APELLIDOP_ESP" />
+          <ScalarProperty Name="APELLIDOM_ESP" ColumnName="APELLIDOM_ESP" />
+          <ScalarProperty Name="ID_TIPOESP" ColumnName="ID_TIPOESP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTATUS_USU">
+      <EntityTypeMapping TypeName="dbDiabetesModel.ESTATUS_USU">
+        <MappingFragment StoreEntitySet="ESTATUS_USU">
+          <ScalarProperty Name="ID_ESTATUS" ColumnName="ID_ESTATUS" />
+          <ScalarProperty Name="NOM_ESTATUS" ColumnName="NOM_ESTATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEDICION_GLUCOSA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.MEDICION_GLUCOSA">
+        <MappingFragment StoreEntitySet="MEDICION_GLUCOSA">
+          <ScalarProperty Name="ID_MEDICION_GLUCOSA" ColumnName="ID_MEDICION_GLUCOSA" />
+          <ScalarProperty Name="PRIMERA_MEDICION" ColumnName="PRIMERA_MEDICION" />
+          <ScalarProperty Name="FECHA_MEDICION_GLUCOSA" ColumnName="FECHA_MEDICION_GLUCOSA" />
+          <ScalarProperty Name="HORA_MEDICION_GLUCOSA" ColumnName="HORA_MEDICION_GLUCOSA" />
+          <ScalarProperty Name="RESULTADO_MEDICION_GLUCOSA" ColumnName="RESULTADO_MEDICION_GLUCOSA" />
+          <ScalarProperty Name="ID_TIPMEDICION" ColumnName="ID_TIPMEDICION" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MODULOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.MODULOS">
+        <MappingFragment StoreEntitySet="MODULOS">
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+          <ScalarProperty Name="NOM_MODULO" ColumnName="NOM_MODULO" />
+          <ScalarProperty Name="DES_MODULO" ColumnName="DES_MODULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOM_CONFERENCIA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.NOM_CONFERENCIA">
+        <MappingFragment StoreEntitySet="NOM_CONFERENCIA">
+          <ScalarProperty Name="ID_NOMCONFERENCIA" ColumnName="ID_NOMCONFERENCIA" />
+          <ScalarProperty Name="NOMBRE_CONF" ColumnName="NOMBRE_CONF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NOTAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.NOTAS">
+        <MappingFragment StoreEntitySet="NOTAS">
+          <ScalarProperty Name="ID_NOTA" ColumnName="ID_NOTA" />
+          <ScalarProperty Name="TXT_NOTA" ColumnName="TXT_NOTA" />
+          <ScalarProperty Name="ID_ESPECIALISTA" ColumnName="ID_ESPECIALISTA" />
+          <ScalarProperty Name="ID_CITAS" ColumnName="ID_CITAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERFIL_MODULOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PERFIL_MODULOS">
+        <MappingFragment StoreEntitySet="PERFIL_MODULOS">
+          <ScalarProperty Name="ID_PERFIL_MODULOS" ColumnName="ID_PERFIL_MODULOS" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="ID_MODULO" ColumnName="ID_MODULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERMISOS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PERMISOS">
+        <MappingFragment StoreEntitySet="PERMISOS">
+          <ScalarProperty Name="ID_PERMISOS" ColumnName="ID_PERMISOS" />
+          <ScalarProperty Name="NOM_PERMISOS" ColumnName="NOM_PERMISOS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERSONAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PERSONAS">
+        <MappingFragment StoreEntitySet="PERSONAS">
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ANIOSCONDIABETES" ColumnName="ANIOSCONDIABETES" />
+          <ScalarProperty Name="APELLIDO_PATER" ColumnName="APELLIDO_PATER" />
+          <ScalarProperty Name="APELLIDO_MATER" ColumnName="APELLIDO_MATER" />
+          <ScalarProperty Name="FECHA_INICIO" ColumnName="FECHA_INICIO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="ID_RECOMENDACION" ColumnName="ID_RECOMENDACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PESO_TALLA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PESO_TALLA">
+        <MappingFragment StoreEntitySet="PESO_TALLA">
+          <ScalarProperty Name="ID_PESO_TALLA" ColumnName="ID_PESO_TALLA" />
+          <ScalarProperty Name="FECHA_PESO_TALLA" ColumnName="FECHA_PESO_TALLA" />
+          <ScalarProperty Name="RESULTADO_PESO" ColumnName="RESULTADO_PESO" />
+          <ScalarProperty Name="RESULTADO_TALLA" ColumnName="RESULTADO_TALLA" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREGUNTA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PREGUNTA">
+        <MappingFragment StoreEntitySet="PREGUNTA">
+          <ScalarProperty Name="ID_PREGUNTA" ColumnName="ID_PREGUNTA" />
+          <ScalarProperty Name="TXTPREGUNTA" ColumnName="TXTPREGUNTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREGUNTA_C">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PREGUNTA_C">
+        <MappingFragment StoreEntitySet="PREGUNTA_C">
+          <ScalarProperty Name="ID_PREGUNTAC" ColumnName="ID_PREGUNTAC" />
+          <ScalarProperty Name="PREGUNTA" ColumnName="PREGUNTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREGUNTAS_CUESTIONARIO">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PREGUNTAS_CUESTIONARIO">
+        <MappingFragment StoreEntitySet="PREGUNTAS_CUESTIONARIO">
+          <ScalarProperty Name="ID_CUESPREGUNTA" ColumnName="ID_CUESPREGUNTA" />
+          <ScalarProperty Name="ID_RESPUESTAC" ColumnName="ID_RESPUESTAC" />
+          <ScalarProperty Name="ID_PREGUNTAC" ColumnName="ID_PREGUNTAC" />
+          <ScalarProperty Name="ID_CUESTIONARIO" ColumnName="ID_CUESTIONARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PREGUNTAS_PRUEBA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PREGUNTAS_PRUEBA">
+        <MappingFragment StoreEntitySet="PREGUNTAS_PRUEBA">
+          <ScalarProperty Name="ID_PREGUNTASBECK" ColumnName="ID_PREGUNTASBECK" />
+          <ScalarProperty Name="ID_PREGUNTA" ColumnName="ID_PREGUNTA" />
+          <ScalarProperty Name="ID_PRUEBA" ColumnName="ID_PRUEBA" />
+          <ScalarProperty Name="ID_RESPUESTA" ColumnName="ID_RESPUESTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRUEBA_BECK">
+      <EntityTypeMapping TypeName="dbDiabetesModel.PRUEBA_BECK">
+        <MappingFragment StoreEntitySet="PRUEBA_BECK">
+          <ScalarProperty Name="ID_PRUEBA" ColumnName="ID_PRUEBA" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Recomendaciones">
+      <EntityTypeMapping TypeName="dbDiabetesModel.Recomendaciones">
+        <MappingFragment StoreEntitySet="Recomendaciones">
+          <ScalarProperty Name="ID_RECOMENDACION" ColumnName="ID_RECOMENDACION" />
+          <ScalarProperty Name="TXT_RECOMENDACION" ColumnName="TXT_RECOMENDACION" />
+          <ScalarProperty Name="TITULO" ColumnName="TITULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESPUESTA_C">
+      <EntityTypeMapping TypeName="dbDiabetesModel.RESPUESTA_C">
+        <MappingFragment StoreEntitySet="RESPUESTA_C">
+          <ScalarProperty Name="ID_RESPUESTAC" ColumnName="ID_RESPUESTAC" />
+          <ScalarProperty Name="NOM_RESPUESTA" ColumnName="NOM_RESPUESTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESPUESTAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.RESPUESTAS">
+        <MappingFragment StoreEntitySet="RESPUESTAS">
+          <ScalarProperty Name="ID_RESPUESTA" ColumnName="ID_RESPUESTA" />
+          <ScalarProperty Name="TXTRESPUESTA" ColumnName="TXTRESPUESTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_ACTIVIDAD">
+      <EntityTypeMapping TypeName="dbDiabetesModel.TIPO_ACTIVIDAD">
+        <MappingFragment StoreEntitySet="TIPO_ACTIVIDAD">
+          <ScalarProperty Name="ID_TIPO_ACTIVIDAD" ColumnName="ID_TIPO_ACTIVIDAD" />
+          <ScalarProperty Name="NOMBRE_TIPO_ACTIVIDAD" ColumnName="NOMBRE_TIPO_ACTIVIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_CITAS">
+      <EntityTypeMapping TypeName="dbDiabetesModel.TIPO_CITAS">
+        <MappingFragment StoreEntitySet="TIPO_CITAS">
+          <ScalarProperty Name="ID_TIPO_CITAS" ColumnName="ID_TIPO_CITAS" />
+          <ScalarProperty Name="NIOMBRE_TIPO_CITAS" ColumnName="NIOMBRE_TIPO_CITAS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_De_Medicion">
+      <EntityTypeMapping TypeName="dbDiabetesModel.Tipo_De_Medicion">
+        <MappingFragment StoreEntitySet="Tipo_De_Medicion">
+          <ScalarProperty Name="ID_TIPMEDICION" ColumnName="ID_TIPMEDICION" />
+          <ScalarProperty Name="NOMBRE_MEDICION" ColumnName="NOMBRE_MEDICION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_ESPECIALISTA">
+      <EntityTypeMapping TypeName="dbDiabetesModel.TIPO_ESPECIALISTA">
+        <MappingFragment StoreEntitySet="TIPO_ESPECIALISTA">
+          <ScalarProperty Name="ID_TIPOESP" ColumnName="ID_TIPOESP" />
+          <ScalarProperty Name="NOM_TIPOESPECIALISTA" ColumnName="NOM_TIPOESPECIALISTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TIPO_USUARIO">
+      <EntityTypeMapping TypeName="dbDiabetesModel.TIPO_USUARIO">
+        <MappingFragment StoreEntitySet="TIPO_USUARIO">
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="NOMBRE_TIPO_USUARIO" ColumnName="NOMBRE_TIPO_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="dbDiabetesModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="ID_PERSONA" ColumnName="ID_PERSONA" />
+          <ScalarProperty Name="ID_TIPO_USUARIO" ColumnName="ID_TIPO_USUARIO" />
+          <ScalarProperty Name="ID_ESTATUS" ColumnName="ID_ESTATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
